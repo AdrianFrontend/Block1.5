@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="repairing-brands">
+    <h2 class="repairing-brands__title">Ремонт техники различных брендов</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <template id="swiper__slide">
+          <div class="swiper-slide">
+            <div class="swiper-card">
+              <img class="swiper-card__logo" src="" alt="">
+              <a class="swiper-card__button" href=""><img class="swiper-card__image-button" src="./img/go-icon.svg"></a>
+              
+            </div>
+          </div>
+        </template>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <div class="brands-list-wrapper">
+    <ul class="brands-list">
+      <template id="brands-list__item">
+        <li class="brand-list__item brand-card">
+          <img class="brand-card__logo" src="" alt="">
+          <a class="brand-card__button" href=""><img class="brand-card__image-button" src="./img/go-icon.svg"></a>
+        </li>
+      </template>
+    </ul>
+    <button class="show-all-button show-all-button--closed">Показать всё</button>
+  </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+
+</html>

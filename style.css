@@ -1,0 +1,233 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: 'TT Lakes Regular';
+  src: url('./fonts/TTLakes-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes Medium';
+  src: url('./fonts/TTLakes-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes Bold';
+  src: url('./fonts/TTLakes-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.repairing-brands {
+  background-color: #f8f8f8
+}
+
+.repairing-brands__title {
+  font-family: 'TT Lakes Regular';
+  color: #7E7E82;
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 16px 32px;
+  background-image: linear-gradient(to right, #F8F8F8, #ffffff)
+}
+
+.brands-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-bottom: 24px;
+}
+
+.brand-card {
+  height: 72px;
+  display: flex;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #ffffff;
+}
+
+.brand-card__logo {
+  max-width: 128px;
+  max-height: 52px;
+}
+
+.brand-card__button {
+  width: 40px;
+  height: 40px;
+
+  transition: all 0.2s
+}
+
+.brand-card__button:hover {
+  opacity: 0.7
+}
+
+.brand-card__button:active {
+  opacity: 0.5
+}
+
+.show-all-button {
+  font-size: 16px;
+
+  border: none;
+  background: none;
+  padding: 0;
+
+  padding-left: 22px;
+
+  transition: all 0.2s
+}
+
+.show-all-button:before {
+  display: inline-block;
+  content: '';
+  width: 8px;
+  height: 10px;
+  background-image: url(./img/arrow-icon.svg);
+
+  transform: translateX(-17px);
+
+  transition: all 0.3s;
+}
+
+.show-all-button:hover {
+  opacity: 0.7
+}
+
+.show-all-button:active {
+  opacity: 0.5
+}
+
+.show-all-button--opened::before {
+  transform: rotate(180deg) translateX(17px)
+}
+
+.swiper {
+  display: none
+}
+
+@media(max-width: 767px) {
+  .brands-list-wrapper {
+    display: none
+  }
+
+  .swiper {
+    display: block
+  }
+
+  .swiper {}
+
+  .swiper::after {
+    width: 24px;
+    height: 81px;
+    content: "";
+    display: inline-block;
+    /* background-color: green; */
+    background-image: linear-gradient(to right, transparent, #F8F8F8);
+    position: absolute;
+    right: 0;
+    top: -5px;
+    z-index: 10;
+  }
+
+  .swiper-slide {
+    padding-bottom: 36px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-card {
+    width: 240px;
+    height: 72px;
+    display: flex;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .swiper-card__logo {
+    max-width: 128px;
+    max-height: 52px;
+  }
+
+  .swiper-card__button {
+    width: 40px;
+    height: 40px;
+
+    transition: all 0.2s
+  }
+
+  .swiper-pagination {}
+}
+
+
+/* ДОПИСАТЬ MAX-WIDTH!!!!!! */
+@media (min-width: 768px) {
+  .brands-list-wrapper {
+    padding-left: 24px;
+    padding-right: 24px;
+
+  }
+
+  .brands-list {
+    column-gap: 24px;
+    row-gap: 16px;
+  }
+
+  .brand-card {
+    width: 224px;
+  }
+}
+
+/* @media () */
+
+
+@media (min-width: 1120px) {
+  .brands-list-wrapper {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .brands-list {
+    column-gap: 32px;
+    row-gap: 16px;
+  }
+
+  .brand-card {
+    width: 240px;
+  }
+}
