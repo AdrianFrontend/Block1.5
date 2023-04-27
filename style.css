@@ -32,10 +32,10 @@ html {
 body {
   padding: 0;
   margin: 0;
+  background-color: #f8f8f8
 }
 
 .repairing-brands {
-  background-color: #f8f8f8
 }
 
 .repairing-brands__title {

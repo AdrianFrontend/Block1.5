@@ -68,9 +68,8 @@ let brands = [
 ]
 
 let windowWidth = window.innerWidth
-console.log(windowWidth)
 
-if (windowWidth < 768) {
+// if (windowWidth < 768) {
   const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
@@ -81,7 +80,7 @@ if (windowWidth < 768) {
       el: '.swiper-pagination',
     },
   });
-}
+// }
 
 let swiperWrapper = document.querySelector(".swiper-wrapper")
 let slideTemplate = document.querySelector("#swiper__slide").content.querySelector(".swiper-slide")
@@ -131,13 +130,7 @@ showAllButton.addEventListener("click", () => {
     showAllButton.classList.add('show-all-button--opened')
     brandsList.querySelector(".brand-card:nth-child(6)")
 
-    let hiddens = brandsListChildrens.length - 7
-    console.log(hiddens)
-
-    for (let i = 8; i <= hiddens; i++) {
-      console.log(1)
-      console.log(brandsList.querySelector('.brand-card:nth-child(6)'))
-    }
+    
   } else {
     showAllButton.classList.remove('show-all-button--opened')
     showAllButton.classList.add('show-all-button--closed')
