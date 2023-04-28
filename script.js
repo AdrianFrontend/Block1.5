@@ -70,16 +70,16 @@ let brands = [
 let windowWidth = window.innerWidth
 
 // if (windowWidth < 768) {
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: false,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  });
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: false,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});
 // }
 
 let swiperWrapper = document.querySelector(".swiper-wrapper")
@@ -128,11 +128,67 @@ showAllButton.addEventListener("click", () => {
   if (showAllButton.classList.contains('show-all-button--closed')) {
     showAllButton.classList.remove('show-all-button--closed')
     showAllButton.classList.add('show-all-button--opened')
-    brandsList.querySelector(".brand-card:nth-child(6)")
-
-    
   } else {
     showAllButton.classList.remove('show-all-button--opened')
     showAllButton.classList.add('show-all-button--closed')
   }
 })
+
+let firstHidden = document.querySelector(".brand-card:nth-child(8)")
+let secondHidden = document.querySelector(".brand-card:nth-child(9)")
+let thirdHidden = document.querySelector(".brand-card:nth-child(10)")
+let fourthHidden = document.querySelector(".brand-card:nth-child(11)")
+let fifthHidden = document.querySelector(".brand-card:nth-child(12)")
+
+if (windowWidth <= 1015) {
+  firstHidden.classList.add('brand-card--hidden')
+  secondHidden.classList.add('brand-card--hidden')
+  thirdHidden.classList.add('brand-card--hidden')
+  fourthHidden.classList.add('brand-card--hidden')
+  fifthHidden.classList.add('brand-card--hidden')
+
+  showAllButton.addEventListener('click', (event) => {
+    if (fifthHidden.classList.contains("brand-card--hidden")) {
+      firstHidden.classList.remove('brand-card--hidden')
+      secondHidden.classList.remove('brand-card--hidden')
+      thirdHidden.classList.remove('brand-card--hidden')
+      fourthHidden.classList.remove('brand-card--hidden')
+      fifthHidden.classList.remove('brand-card--hidden')
+    } else {
+      firstHidden.classList.add('brand-card--hidden')
+      secondHidden.classList.add('brand-card--hidden')
+      thirdHidden.classList.add('brand-card--hidden')
+      fourthHidden.classList.add('brand-card--hidden')
+      fifthHidden.classList.add('brand-card--hidden')
+    }
+  })
+} else if (windowWidth > 1015 && windowWidth <= 1391) {
+  thirdHidden.classList.add('brand-card--hidden')
+  fourthHidden.classList.add('brand-card--hidden')
+  fifthHidden.classList.add('brand-card--hidden')
+
+  showAllButton.addEventListener('click', (event) => {
+    if (fifthHidden.classList.contains("brand-card--hidden")) {
+      thirdHidden.classList.remove('brand-card--hidden')
+      fourthHidden.classList.remove('brand-card--hidden')
+      fifthHidden.classList.remove('brand-card--hidden')
+    } else {
+      thirdHidden.classList.add('brand-card--hidden')
+      fourthHidden.classList.add('brand-card--hidden')
+      fifthHidden.classList.add('brand-card--hidden')
+    }
+  })
+} else if (windowWidth > 1391) {
+  fifthHidden.classList.add('brand-card--hidden')
+
+  showAllButton.addEventListener('click', (event) => {
+    if (fifthHidden.classList.contains("brand-card--hidden")) {
+      fifthHidden.classList.remove('brand-card--hidden')
+    } else {
+      fifthHidden.classList.add('brand-card--hidden')
+    }
+  })
+}
+
+
+
