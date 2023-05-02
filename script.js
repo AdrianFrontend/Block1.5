@@ -71,6 +71,8 @@ let windowWidth = window.innerWidth
 
 // if (windowWidth < 768) {
 const swiper = new Swiper('.swiper', {
+
+  // slidesPerView: 2
   // Optional parameters
   direction: 'horizontal',
   loop: false,
@@ -134,58 +136,48 @@ showAllButton.addEventListener("click", () => {
   }
 })
 
-let firstHidden = document.querySelector(".brand-card:nth-child(8)")
-let secondHidden = document.querySelector(".brand-card:nth-child(9)")
-let thirdHidden = document.querySelector(".brand-card:nth-child(10)")
-let fourthHidden = document.querySelector(".brand-card:nth-child(11)")
-let fifthHidden = document.querySelector(".brand-card:nth-child(12)")
+let hiddenElements = document.querySelectorAll(".brand-card")
 
 if (windowWidth <= 1015) {
-  firstHidden.classList.add('brand-card--hidden')
-  secondHidden.classList.add('brand-card--hidden')
-  thirdHidden.classList.add('brand-card--hidden')
-  fourthHidden.classList.add('brand-card--hidden')
-  fifthHidden.classList.add('brand-card--hidden')
+  for (let i = 6; i < hiddenElements.length; i++) {
+    hiddenElements[i].classList.add('brand-card--hidden')
+  }
 
   showAllButton.addEventListener('click', (event) => {
-    if (fifthHidden.classList.contains("brand-card--hidden")) {
-      firstHidden.classList.remove('brand-card--hidden')
-      secondHidden.classList.remove('brand-card--hidden')
-      thirdHidden.classList.remove('brand-card--hidden')
-      fourthHidden.classList.remove('brand-card--hidden')
-      fifthHidden.classList.remove('brand-card--hidden')
+    if (hiddenElements[6].classList.contains("brand-card--hidden")) {
+      for (let i = 6; i < hiddenElements.length; i++) {
+        hiddenElements[i].classList.remove('brand-card--hidden')
+      }
     } else {
-      firstHidden.classList.add('brand-card--hidden')
-      secondHidden.classList.add('brand-card--hidden')
-      thirdHidden.classList.add('brand-card--hidden')
-      fourthHidden.classList.add('brand-card--hidden')
-      fifthHidden.classList.add('brand-card--hidden')
+      for (let i = 6; i < hiddenElements.length; i++) {
+        hiddenElements[i].classList.add('brand-card--hidden')
+      }
     }
   })
 } else if (windowWidth > 1015 && windowWidth <= 1391) {
-  thirdHidden.classList.add('brand-card--hidden')
-  fourthHidden.classList.add('brand-card--hidden')
-  fifthHidden.classList.add('brand-card--hidden')
+  for (let i = 8; i < hiddenElements.length; i++) {
+    hiddenElements[i].classList.add('brand-card--hidden')
+  }
 
   showAllButton.addEventListener('click', (event) => {
-    if (fifthHidden.classList.contains("brand-card--hidden")) {
-      thirdHidden.classList.remove('brand-card--hidden')
-      fourthHidden.classList.remove('brand-card--hidden')
-      fifthHidden.classList.remove('brand-card--hidden')
+    if (hiddenElements[8].classList.contains("brand-card--hidden")) {
+      for (let i = 8; i < hiddenElements.length; i++) {
+        hiddenElements[i].classList.remove('brand-card--hidden')
+      }
     } else {
-      thirdHidden.classList.add('brand-card--hidden')
-      fourthHidden.classList.add('brand-card--hidden')
-      fifthHidden.classList.add('brand-card--hidden')
+      for (let i = 8; i < hiddenElements.length; i++) {
+        hiddenElements[i].classList.add('brand-card--hidden')
+      }
     }
   })
 } else if (windowWidth > 1391) {
-  fifthHidden.classList.add('brand-card--hidden')
+  hiddenElements[10].classList.add('brand-card--hidden')
 
   showAllButton.addEventListener('click', (event) => {
-    if (fifthHidden.classList.contains("brand-card--hidden")) {
-      fifthHidden.classList.remove('brand-card--hidden')
+    if (hiddenElements[10].classList.contains("brand-card--hidden")) {
+      hiddenElements[10].classList.remove('brand-card--hidden')
     } else {
-      fifthHidden.classList.add('brand-card--hidden')
+      hiddenElements[10].classList.add('brand-card--hidden')
     }
   })
 }
