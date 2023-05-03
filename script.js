@@ -71,15 +71,23 @@ let windowWidth = window.innerWidth
 
 // if (windowWidth < 768) {
 const swiper = new Swiper('.swiper', {
-
-  // slidesPerView: 2
   // Optional parameters
   direction: 'horizontal',
-  loop: false,
+  loop: true,
+  // slidesPerView: 2,
+  centeredSlides: true,
+
+  breakpoints: {
+    650: {
+      slidesPerView: 2
+    } 
+  },
 
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
+    // bulletClass: ""
   },
 });
 // }
@@ -142,7 +150,6 @@ if (windowWidth <= 1015) {
   for (let i = 6; i < hiddenElements.length; i++) {
     hiddenElements[i].classList.add('brand-card--hidden')
   }
-
   showAllButton.addEventListener('click', (event) => {
     if (hiddenElements[6].classList.contains("brand-card--hidden")) {
       for (let i = 6; i < hiddenElements.length; i++) {

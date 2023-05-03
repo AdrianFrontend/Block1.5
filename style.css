@@ -147,8 +147,8 @@ body {
     display: block
   }
 
-  .swiper {
-    /* overflow: hidden */
+  .swiper-pagination-bullet, .swiper-pagination-bullet-active {
+    background-color: #B5B6BC;
   }
 
   .swiper::after {
@@ -195,10 +195,6 @@ body {
     height: 40px;
 
     transition: all 0.2s
-  }
-
-  .swiper-wrapper {
-    /* overflow: hidden */
   }
 }
 
