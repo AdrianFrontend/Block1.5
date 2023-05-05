@@ -1,14 +1,38 @@
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: true,
-  centeredSlides: true,
+  slidesPerView: 1.2,
 
   breakpoints: {
-    620: {
+    350: {
+      slidesPerView: 1.3
+    },
+    370: {
+      slidesPerView: 1.4
+    },
+    400: {
+      slidesPerView: 1.55
+    },
+    450: {
+      slidesPerView: 1.7
+    },
+    480: {
+      slidesPerView: 1.85
+    },
+    550: {
       slidesPerView: 2
     },
+    600: {
+      slidesPerView: 2.2
+    },
+    650: {
+      slidesPerView: 2.5
+    },
+    700: {
+      slidesPerView: 2.8
+    }
   },
-  
+
   pagination: {
     el: '.swiper-pagination',
     clickable: true
